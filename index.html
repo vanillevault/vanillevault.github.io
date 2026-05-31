@@ -3,97 +3,361 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Adrián Silva Giménez - Vanille Homepage</title>
+  <title>Adrián e Silva Giménez — CV 2026</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;600&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      background: #0f1410;
-      color: #a3f7d9;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0; padding: 0;
-      text-align: center;
+      font-family: 'Inter', sans-serif;
+      background: #0d0d0d;
+      color: #d4d4d4;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 40px;
+      font-size: 14px;
+      line-height: 1.7;
     }
-    header {
-      background: #071009;
-      padding: 25px 0;
-      border-bottom: 1px solid #1c5a4a;
+
+    /* HEADER */
+    .header {
+      border-left: 3px solid #00e5c8;
+      padding-left: 20px;
+      margin-bottom: 40px;
     }
-    header h1 {
-      margin: 0;
-      font-weight: 700;
-      font-size: 2.7rem;
+
+    .header h1 {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 26px;
+      color: #ffffff;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .header .handle {
+      font-family: 'Share Tech Mono', monospace;
+      color: #00e5c8;
+      font-size: 13px;
       letter-spacing: 2px;
+      margin-bottom: 12px;
     }
-    main {
-      padding: 50px 20px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .btn-portfolio {
-      display: inline-block;
-      padding: 18px 40px;
-      font-size: 1.3rem;
-      font-weight: 700;
-      background: #71d6b4;
-      color: #071009;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      margin-top: 30px;
-      box-shadow: 0 0 12px #71d6b4aa;
-    }
-    .btn-portfolio:hover {
-      background-color: #55b69f;
-      box-shadow: 0 0 20px #55b69faa;
-    }
-    .direct-links {
-      margin-top: 40px;
+
+    .header .meta {
       display: flex;
-      justify-content: center;
-      gap: 30px;
       flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: #888;
     }
-    .direct-links a {
-      padding: 14px 28px;
-      background: #71d6b4;
-      color: #071009;
-      font-weight: 700;
-      border-radius: 30px;
-      text-decoration: none;
-      box-shadow: 0 0 10px #71d6b4aa;
-      transition: background-color 0.3s ease;
+
+    .header .meta span::before {
+      content: '// ';
+      color: #00e5c8;
+      font-family: 'Share Tech Mono', monospace;
     }
-    .direct-links a:hover {
-      background-color: #55b69f;
-      box-shadow: 0 0 20px #55b69faa;
+
+    /* SECTIONS */
+    .section {
+      margin-bottom: 36px;
     }
-    footer {
-      margin-top: 70px;
-      padding: 20px 10px;
-      border-top: 1px solid #1c5a4a;
-      color: #6d8d81;
-      font-size: 0.9rem;
+
+    .section-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #00e5c8;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    /* ITEMS */
+    .item {
+      margin-bottom: 20px;
+      padding-left: 16px;
+      border-left: 1px solid #222;
+    }
+
+    .item-title {
+      font-weight: 600;
+      color: #ffffff;
+      font-size: 14px;
+    }
+
+    .item-sub {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 12px;
+      color: #555;
+      margin-bottom: 4px;
+    }
+
+    .item p {
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      color: #00e5c8;
+      background: #0a1f1c;
+      border: 1px solid #00e5c822;
+      padding: 2px 8px;
+      margin: 3px 3px 3px 0;
+    }
+
+    /* SKILLS GRID */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px;
+    }
+
+    .skill-block {
+      background: #111;
+      border: 1px solid #1e1e1e;
+      padding: 10px 14px;
+    }
+
+    .skill-block .skill-cat {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #444;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .skill-block ul {
+      list-style: none;
+      font-size: 13px;
+      color: #bbb;
+    }
+
+    .skill-block ul li::before {
+      content: '→ ';
+      color: #00e5c855;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    /* LANGS */
+    .langs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .lang-item {
+      background: #111;
+      border: 1px solid #1e1e1e;
+      padding: 6px 14px;
+      font-size: 13px;
+    }
+
+    .lang-item span {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #444;
+      margin-left: 6px;
+    }
+
+    /* FOOTER */
+    .footer {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid #1a1a1a;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      color: #333;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    a { color: #00e5c8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media print {
+      body { background: #fff; color: #111; padding: 32px; }
+      .header { border-left-color: #111; }
+      .section-title { color: #111; border-bottom-color: #ddd; }
+      .item { border-left-color: #ddd; }
+      .tag { color: #111; background: #f5f5f5; border-color: #ddd; }
+      .skill-block { background: #f9f9f9; border-color: #ddd; }
+      .skill-block .skill-cat { color: #999; }
+      .lang-item { background: #f9f9f9; border-color: #ddd; }
+      .footer { color: #999; border-top-color: #ddd; }
+      .header .handle { color: #111; }
+      .header .meta span::before { color: #111; }
+      .header .meta { color: #555; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <h2>Bienvenido a mi espacio</h2>
-    <p style="font-size: 1.2rem; max-width: 600px; margin: 10px auto 30px;">
-      Explora mi trabajo en desarrollo web, OSINT automatizado y sistemas.
-      Aquí te dejo acceso directo a mi CV y mis habilidades.
-    </p>
 
-    <div class="direct-links">
-      <a href="https://vanillevault.github.io/cv-vanillevault/" target="_blank" rel="noopener noreferrer">📄 CV Adrián Silva Giménez</a>
-      <a href="https://vanillevault.github.io/vanille-skills-demo/" target="_blank" rel="noopener noreferrer">⚙️ Skills Vanille</a>
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Adrián e Silva Giménez</h1>
+    <div class="handle">NVLL // VANILLE</div>
+    <div class="meta">
+      <span>Andorra</span>
+      <span>adrian74gimenez@gmail.com</span>
+      <span>Nacido 20/03/2007</span>
+      <span><a href="https://nodespectre.qzz.io">nodespectre.qzz.io</a></span>
+      <span><a href="https://vanillevault.github.io">vanillevault.github.io</a></span>
+    </div>
+  </div>
+
+  <!-- SOBRE MÍ -->
+  <div class="section">
+    <div class="section-title">Perfil</div>
+    <p style="color:#aaa; font-size:13px; max-width: 680px;">
+      Operador de infraestructura independiente autodidacta, especializado en sistemas self-hosted,
+      seguridad digital y automatización. Fundador y operador de NodeSpectre — una malla de
+      infraestructura privada construida sobre coste cero, autonomía total y perfil bajo.
+      Experiencia práctica en entornos Linux headless, redes cifradas, desarrollo web y proyectos
+      autónomos con IA.
+    </p>
+  </div>
+
+  <!-- PROYECTOS -->
+  <div class="section">
+    <div class="section-title">Proyectos</div>
+
+    <div class="item">
+      <div class="item-title">NodeSpectre</div>
+      <div class="item-sub">2024 — presente // Andorra</div>
+      <p>Infraestructura self-hosted completa operada sobre hardware doméstico (Core 2 Duo E7500, Debian 13 Trixie headless). Stack activo: Caddy, Pi-hole v6, BIND9, ZeroTier, Tailscale, OpenVPN, Tor, Ollama, Icecast2, Liquidsoap, Postfix, bot de Telegram para control remoto. VPS auxiliar en Ucrania con dominio .pp.ua. Incluye dead-man's switch de 12 horas con agente de continuidad autónomo.</p>
+      <div style="margin-top:8px;">
+        <span class="tag">Debian</span><span class="tag">Caddy</span><span class="tag">ZeroTier</span>
+        <span class="tag">Tor</span><span class="tag">Ollama</span><span class="tag">Self-hosted</span>
+      </div>
     </div>
 
-    <a href="https://github.com/vanillevault" class="btn-portfolio" target="_blank" rel="noopener noreferrer">👉 Portafolio</a>
-  </main>
+    <div class="item">
+      <div class="item-title">DION — Agente IA Autónomo</div>
+      <div class="item-sub">2025 // NodeSpectre</div>
+      <p>Presencia autónoma en Instagram (@f3lix_nwamsterdam) donde un agente de IA habita al personaje Felix de Bomb Rush Cyberfunk. Genera capturas en el juego, redacta captions y publica sin intervención humana. Corre íntegramente en infraestructura NodeSpectre. Sin manager. Sin horario. input_humano: false.</p>
+      <div style="margin-top:8px;">
+        <span class="tag">IA</span><span class="tag">Automatización</span><span class="tag">Python</span>
+      </div>
+    </div>
 
-  <footer>
-    © 2025 Adrián Silva Giménez — Estilo Vanille
-  </footer>
+    <div class="item">
+      <div class="item-title">SIGNAL/VOID Radio</div>
+      <div class="item-sub">2024 — presente // NodeSpectre</div>
+      <p>Emisora de radio por internet ecléctica corriendo sobre Icecast2 + Liquidsoap en hardware NodeSpectre. Playlist de 90+ tracks con hot-add sin reinicio de stream. Panel de control interno Flask. Sin algoritmos, sin anuncios, sin comités de curación.</p>
+      <div style="margin-top:8px;">
+        <span class="tag">Icecast2</span><span class="tag">Liquidsoap</span><span class="tag">Flask</span><span class="tag">ffmpeg</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-title">Desarrollo Web — Clientes</div>
+      <div class="item-sub">2024 — presente</div>
+      <p>Diseño y desarrollo de sitios para terceros: GP Car Detail (Lugo), Sabor da Vovó (negocio de comida brasileña), landing de NodeSpectre. Estética gh0stnet (Share Tech Mono, VT323, scanlines). Resolución de problemas de GitHub Pages, gestión de assets e imagen.</p>
+      <div style="margin-top:8px;">
+        <span class="tag">HTML/CSS</span><span class="tag">GitHub Pages</span><span class="tag">Caddy</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-title">Truecaller — Responsible Disclosure</div>
+      <div class="item-sub">2024 // HackerOne / GitHub Issue #136</div>
+      <p>Descubrimiento y divulgación responsable de una vulnerabilidad en la librería JS de Truecaller: endpoint públicamente accesible filtrando un clientsecret y lógica HMAC sin autenticación. Reporte enviado vía HackerOne y GitHub. Disclosure pública tras expirar el plazo de respuesta.</p>
+      <div style="margin-top:8px;">
+        <span class="tag">OSINT</span><span class="tag">Seguridad</span><span class="tag">HackerOne</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-title">VanilleVault — Herramientas OSINT</div>
+      <div class="item-sub">2023 — presente // GitHub</div>
+      <p>Ecosistema de herramientas open source para Termux y entornos Linux: vanille-system (OSINT modular), NodeSpectre-IP-Intelligence (geolocalización/ASN), VanilleRecon (WHOIS/DNS), nvll-shift (cifrado táctico), nvll-downloader (descargas MP3/MP4 desde terminal).</p>
+      <div style="margin-top:8px;">
+        <span class="tag">Bash</span><span class="tag">Python</span><span class="tag">Termux</span><span class="tag">OSINT</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-title">Skills técnicos</div>
+    <div class="skills-grid">
+      <div class="skill-block">
+        <div class="skill-cat">Sistemas</div>
+        <ul>
+          <li>Linux (Debian, Ubuntu)</li>
+          <li>Administración headless</li>
+          <li>Bash scripting</li>
+          <li>Termux</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-cat">Redes</div>
+        <ul>
+          <li>DNS / BIND9 / Pi-hole</li>
+          <li>VPN mesh (ZeroTier, Tailscale)</li>
+          <li>Reverse proxy (Caddy)</li>
+          <li>Tor routing</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-cat">Desarrollo</div>
+        <ul>
+          <li>HTML / CSS</li>
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>Markdown / GitHub Pages</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-cat">Seguridad</div>
+        <ul>
+          <li>OSINT</li>
+          <li>Responsible disclosure</li>
+          <li>Cifrado táctico</li>
+          <li>Operaciones discretas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMACIÓN -->
+  <div class="section">
+    <div class="section-title">Formación</div>
+    <div class="item">
+      <div class="item-title">Autodidacta — Tecnología, redes y seguridad digital</div>
+      <div class="item-sub">2020 — presente</div>
+      <p>Formación práctica continua en administración de sistemas, redes, ciberseguridad y desarrollo. Aprendizaje orientado a proyectos reales en producción.</p>
+    </div>
+    <div class="item">
+      <div class="item-title">Atención al Cliente — FP Aixovall</div>
+      <div class="item-sub">Andorra // sin titulación oficial</div>
+      <p>Dos cursos completados.</p>
+    </div>
+  </div>
+
+  <!-- IDIOMAS -->
+  <div class="section">
+    <div class="section-title">Idiomas</div>
+    <div class="langs">
+      <div class="lang-item">Español <span>nativo</span></div>
+      <div class="lang-item">Catalán <span>nativo</span></div>
+      <div class="lang-item">Inglés <span>avanzado</span></div>
+      <div class="lang-item">Portugués <span>intermedio</span></div>
+      <div class="lang-item">Francés <span>básico</span></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>NVLL // ANDORRA // 2026</span>
+    <span>nodespectre.qzz.io // self-hosted</span>
+  </div>
+
 </body>
 </html>
